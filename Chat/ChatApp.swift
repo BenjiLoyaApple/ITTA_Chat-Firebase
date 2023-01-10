@@ -1,8 +1,8 @@
 //
-//  ChatApp.swift
+//  ContentView.swift
 //  Chat
 //
-//  Created by Benji Loya on 09/01/2023.
+//  Created by Benji Loya on 10/01/23.
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ import SwiftUI
 struct ChatApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainMessagesView()
         }
     }
 }
