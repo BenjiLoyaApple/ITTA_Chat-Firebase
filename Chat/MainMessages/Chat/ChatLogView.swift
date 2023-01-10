@@ -13,13 +13,6 @@ import FirebaseFirestore
 
 struct ChatLogView: View {
     
-//    let chatUser: ChatUser?
-//
-//    init(chatUser: ChatUser?) {
-//        self.chatUser = chatUser
-//        self.vm = .init(chatUser: chatUser)
-//    }
-    
     @ObservedObject var vm: ChatLogViewModel
     
     var body: some View {
@@ -145,9 +138,6 @@ private struct DescriptionPlaceholder: View {
 
 struct ChatLogView_Previews: PreviewProvider {
     static var previews: some View {
-//        NavigationView {
-//            ChatLogView(chatUser: .init(data: ["uid": "R8ZrxIT4uRZMVZeWwWeQWPI5zUE3", "email": "waterfall1@gmail.com"]))
-//        }
         MainMessagesView()
     }
 }
