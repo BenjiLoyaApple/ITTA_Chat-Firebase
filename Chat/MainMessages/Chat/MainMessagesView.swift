@@ -124,6 +124,7 @@ struct MainMessagesView: View {
                                     .foregroundColor(Color(.gray))
                                     .multilineTextAlignment(.leading)
                             }
+                            .frame(maxHeight: 50)
                             Spacer()
                             
                             Text(recentMessage.timeAgo)

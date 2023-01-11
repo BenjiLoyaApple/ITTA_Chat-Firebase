@@ -132,8 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				E40C1066296D642700C9C512 /* Chat */,
-				E40C1068296D642700C9C512 /* MainMessagesView.swift */,
-				E40C1069296D642700C9C512 /* NewMessage */,
 			);
 			path = MainMessages;
 			sourceTree = "<group>";
@@ -141,17 +139,11 @@
 		E40C1066296D642700C9C512 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				E40C1068296D642700C9C512 /* MainMessagesView.swift */,
+				E40C106A296D642700C9C512 /* CreateNewMessageView.swift */,
 				E40C1067296D642700C9C512 /* ChatLogView.swift */,
 			);
 			path = Chat;
-			sourceTree = "<group>";
-		};
-		E40C1069296D642700C9C512 /* NewMessage */ = {
-			isa = PBXGroup;
-			children = (
-				E40C106A296D642700C9C512 /* CreateNewMessageView.swift */,
-			);
-			path = NewMessage;
 			sourceTree = "<group>";
 		};
 		E40C1077296D67B700C9C512 /* ViewModel */ = {
