@@ -34,16 +34,15 @@ struct CreateNewMessageView: View {
                                 .frame(width: 50, height: 50)
                                 .clipped()
                                 .cornerRadius(50)
-                                .overlay(RoundedRectangle(cornerRadius: 50)
-                                            .stroke(Color(.label), lineWidth: 2)
-                                )
+                                .shadow(radius: 10)
+                                
                             Text(user.email)
                                 .foregroundColor(Color(.label))
                             Spacer()
                         }.padding(.horizontal)
                     }
                     Divider()
-                        .padding(.vertical, 8)
+                        .padding(.leading, 80)
                 }
             }.navigationTitle("New Message")
                 .toolbar {

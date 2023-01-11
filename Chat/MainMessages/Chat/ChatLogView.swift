@@ -49,7 +49,6 @@ struct ChatLogView: View {
                         }
                     }
                 }
-                .background(Color(.init(white: 0.95, alpha: 1)))
                 .safeAreaInset(edge: .bottom) {
                     chatBottomBar
                         .background(Color(.systemBackground).ignoresSafeArea())
@@ -61,14 +60,16 @@ struct ChatLogView: View {
     }
     
     private var chatBottomBar: some View {
-        HStack(spacing: 16) {
-            Image(systemName: "photo.on.rectangle")
+        HStack(spacing: 10) {
+            Image(systemName: "photo")
                 .font(.system(size: 24))
-                .foregroundColor(Color(.darkGray))
+                .foregroundColor(Color(.gray))
             ZStack {
                 DescriptionPlaceholder()
                 TextEditor(text: $vm.chatText)
                     .opacity(vm.chatText.isEmpty ? 0.5 : 1)
+                    .offset(x: 10)
+                   
             }
             .frame(height: 40)
             
@@ -80,8 +81,11 @@ struct ChatLogView: View {
             }
             .padding(.horizontal)
             .padding(.vertical, 8)
-            .background(Color.blue)
-            .cornerRadius(4)
+            .background(LinearGradient(
+                gradient: Gradient(colors: [Color(#colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)),Color(#colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)),]),
+                startPoint: .trailing,
+                endPoint: .leading))
+            .cornerRadius(20)
         }
         .padding(.horizontal)
         .padding(.vertical, 8)
@@ -96,43 +100,51 @@ struct MessageView: View {
         VStack {
             if message.fromId == FirebaseManager.shared.auth.currentUser?.uid {
                 HStack {
-                    Spacer()
+                    Spacer(minLength: 5)
                     HStack {
                         Text(message.text)
                             .foregroundColor(.white)
                     }
-                    .padding()
-                    .background(Color.blue)
-                    .cornerRadius(8)
+                    .padding(10)
+                    .background(LinearGradient(
+                        gradient: Gradient(colors: [Color(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)),Color(#colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)),]),
+                        startPoint: .trailing,
+                        endPoint: .leading))
+                    .cornerRadius(15)
+                    .shadow(radius: 5, x: 5, y: 5)
                 }
             } else {
                 HStack {
                     HStack {
                         Text(message.text)
-                            .foregroundColor(.black)
                     }
-                    .padding()
-                    .background(Color.white)
-                    .cornerRadius(8)
+                    .padding(10)
+                    .background(Color("MessageColor"))
+                    .cornerRadius(15)
+                    .shadow(radius: 5, x: 5, y: 5)
                     Spacer()
                 }
             }
         }
         .padding(.horizontal)
-        .padding(.top, 8)
+//        .padding(.top, 8)
     }
 }
 
 private struct DescriptionPlaceholder: View {
     var body: some View {
         HStack {
-            Text("Description")
+            Text("Message...")
                 .foregroundColor(Color(.gray))
                 .font(.system(size: 17))
-                .padding(.leading, 5)
+                .padding(.leading, 15)
                 .padding(.top, -4)
+            
             Spacer()
         }
+        RoundedRectangle(cornerRadius: 20)
+            .stroke(Color.blue, lineWidth: 1)
+            
     }
 }
 

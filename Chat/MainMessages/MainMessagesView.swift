@@ -22,7 +22,7 @@ struct MainMessagesView: View {
     private var chatLogViewModel = ChatLogViewModel(chatUser: nil)
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             
             VStack {
                 customNavBar
@@ -48,7 +48,7 @@ struct MainMessagesView: View {
                 .clipped()
                 .cornerRadius(50)
                 .overlay(RoundedRectangle(cornerRadius: 44)
-                            .stroke(Color(.label), lineWidth: 1)
+                            .stroke(Color(.gray), lineWidth: 1)
                 )
                 .shadow(radius: 5)
             
@@ -56,16 +56,7 @@ struct MainMessagesView: View {
             VStack(alignment: .leading, spacing: 4) {
                 let email = vm.chatUser?.email.replacingOccurrences(of: "@gmail.com", with: "") ?? ""
                 Text(email)
-                    .font(.system(size: 24, weight: .bold))
-                
-                HStack {
-                    Circle()
-                        .foregroundColor(.green)
-                        .frame(width: 14, height: 14)
-                    Text("online")
-                        .font(.system(size: 12))
-                        .foregroundColor(Color(.lightGray))
-                }
+                    .font(.system(size: 22, weight: .semibold))
                 
             }
             
@@ -73,9 +64,10 @@ struct MainMessagesView: View {
             Button {
                 shouldShowLogOutOptions.toggle()
             } label: {
-                Image(systemName: "gear")
-                    .font(.system(size: 24, weight: .bold))
+                Image(systemName: "ellipsis")
+                    .font(.system(size: 20))
                     .foregroundColor(Color(.label))
+                    .rotation3DEffect(Angle(degrees: 90), axis: (x: 0, y: 0, z: 1))
             }
         }
         .padding()
@@ -118,7 +110,7 @@ struct MainMessagesView: View {
                                 .clipped()
                                 .cornerRadius(64)
                                 .overlay(RoundedRectangle(cornerRadius: 64)
-                                            .stroke(Color.black, lineWidth: 1))
+                                    .stroke(Color.gray, lineWidth: 0))
                                 .shadow(radius: 5)
                             
                             
@@ -129,21 +121,22 @@ struct MainMessagesView: View {
                                     .multilineTextAlignment(.leading)
                                 Text(recentMessage.text)
                                     .font(.system(size: 14))
-                                    .foregroundColor(Color(.darkGray))
+                                    .foregroundColor(Color(.gray))
                                     .multilineTextAlignment(.leading)
                             }
                             Spacer()
                             
                             Text(recentMessage.timeAgo)
-                                .font(.system(size: 14, weight: .semibold))
-                                .foregroundColor(Color(.label))
+                                .font(.system(size: 11, weight: .light))
+                                .foregroundColor(Color(.lightGray))
                         }
                     }
 
 
                     
                     Divider()
-                        .padding(.vertical, 8)
+                        .padding(.vertical, 5)
+                        .padding(.leading, 75)
                 }.padding(.horizontal)
                 
             }.padding(.bottom, 50)
@@ -164,10 +157,13 @@ struct MainMessagesView: View {
             }
             .foregroundColor(.white)
             .padding(.vertical)
-                .background(Color.blue)
+                .background(LinearGradient(
+                    gradient: Gradient(colors: [Color(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)),Color(#colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)),]),
+                    startPoint: .trailing,
+                    endPoint: .leading))
                 .cornerRadius(32)
                 .padding(.horizontal)
-                .shadow(radius: 15)
+                .shadow(radius: 10, x: -5, y: 5)
         }
         .fullScreenCover(isPresented: $shouldShowNewMessageScreen) {
             CreateNewMessageView(didSelectNewUser: { user in

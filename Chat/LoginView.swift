@@ -46,11 +46,11 @@ struct LoginView: View {
                                     Image(systemName: "person.fill")
                                         .font(.system(size: 64))
                                         .padding()
-                                        .foregroundColor(Color(.label))
+                                        .foregroundColor(Color(.gray))
                                 }
                             }
                             .overlay(RoundedRectangle(cornerRadius: 64)
-                                        .stroke(Color.black, lineWidth: 3)
+                                        .stroke(Color.gray, lineWidth: 1)
                             )
                             
                         }
@@ -63,7 +63,15 @@ struct LoginView: View {
                         SecureField("Password", text: $password)
                     }
                     .padding(12)
-                    .background(Color.white)
+//                    .background(Color.white)
+                    .background(LinearGradient(
+                        gradient: Gradient(colors: [Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)),Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)),]),
+                        startPoint: .trailing,
+                        endPoint: .leading))
+                    .cornerRadius(25)
+                    
+                    
+                    
                     
                     Button {
                         handleAction()
@@ -72,10 +80,15 @@ struct LoginView: View {
                             Spacer()
                             Text(isLoginMode ? "Log In" : "Create Account")
                                 .foregroundColor(.white)
-                                .padding(.vertical, 10)
-                                .font(.system(size: 14, weight: .semibold))
+                                .padding(.vertical, 15)
+                                .font(.system(size: 18))
+                                
                             Spacer()
-                        }.background(Color.blue)
+                        }.background(LinearGradient(
+                            gradient: Gradient(colors: [Color(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)),Color(#colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)),]),
+                            startPoint: .trailing,
+                            endPoint: .leading))
+                            .cornerRadius(20)
                         
                     }
                     
@@ -86,8 +99,8 @@ struct LoginView: View {
                 
             }
             .navigationTitle(isLoginMode ? "Log In" : "Create Account")
-            .background(Color(.init(white: 0, alpha: 0.05))
-                            .ignoresSafeArea())
+//            .background(Color(.init(white: 0, alpha: 0.05))
+//                            .ignoresSafeArea())
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .fullScreenCover(isPresented: $shouldShowImagePicker, onDismiss: nil) {
