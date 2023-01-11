@@ -47,9 +47,6 @@ struct MainMessagesView: View {
                 .frame(width: 50, height: 50)
                 .clipped()
                 .cornerRadius(50)
-                .overlay(RoundedRectangle(cornerRadius: 44)
-                            .stroke(Color(.gray), lineWidth: 1)
-                )
                 .shadow(radius: 5)
             
             

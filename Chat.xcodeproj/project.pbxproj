@@ -90,10 +90,10 @@
 				E40C1035296BD41D00C9C512 /* GoogleService-Info.plist */,
 				E40C105D296D642600C9C512 /* ChatApp.swift */,
 				E40C106B296D642700C9C512 /* LoginView.swift */,
+				E40C1062296D642600C9C512 /* Utils */,
 				E40C105E296D642600C9C512 /* Model */,
 				E40C1077296D67B700C9C512 /* ViewModel */,
 				E40C1065296D642700C9C512 /* MainMessages */,
-				E40C1062296D642600C9C512 /* Utils */,
 				E40C1027296BC5F700C9C512 /* Assets.xcassets */,
 				E40C1040296BDC3500C9C512 /* ImagePicker.swift */,
 				E40C1029296BC5F700C9C512 /* Preview Content */,
@@ -377,13 +377,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Chat/Preview Content\"";
 				DEVELOPMENT_TEAM = 62UE764E85;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Chat;
+				INFOPLIST_KEY_CFBundleDisplayName = EasyChat;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -411,13 +412,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Chat/Preview Content\"";
 				DEVELOPMENT_TEAM = 62UE764E85;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Chat;
+				INFOPLIST_KEY_CFBundleDisplayName = EasyChat;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
