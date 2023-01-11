@@ -47,7 +47,7 @@ class ChatLogViewModel: ObservableObject {
                 querySnapshot?.documentChanges.forEach({ change in
                     if change.type == .added {
                         do {
-                            if let cm = try change.document.data(as: ChatMessage.self) {
+                            if let cm = try change.document.data(as: ChatMessage?.self) {
                                 self.chatMessages.append(cm)
                                 print("Appending chatMessage in ChatLogView: \(Date())")
                             }

@@ -59,7 +59,7 @@ class MainMessagesViewModel: ObservableObject {
                     }
                     
                     do {
-                        if let rm = try change.document.data(as: RecentMessage.self) {
+                        if let rm = try change.document.data(as: RecentMessage?.self) {
                             self.recentMessages.insert(rm, at: 0)
                         }
                     } catch {
